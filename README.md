@@ -4,6 +4,7 @@
 ## 기술 스택
 > * 스프링부트
 > * MySQL
+> * AWS lightsail
 > * HTML, CSS
 > * BootStrap
 
