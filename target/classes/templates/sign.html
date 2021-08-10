@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/sign.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="log">
+            <a href="main.html">Bllog</a>
+        </div>
+        <div class="form-box">
+            <form action="" class="form">
+                <div class="id-box box">
+                    <p>아이디</p>
+                    <input type="text" id="id" class="id-in in" autofocus required>
+                </div>
+                <div class="pw-box box">
+                    <p>비밀번호</p>
+                    <input type="password" id="pw" class="pw-in in" required>
+                    
+                </div>
+                <div class="pwcheck-box box">
+                    <p>비밀번호 재확인</p>
+                    <input type="password" id="pw2" class="pw2-in in" required>
+                    <p class="success">비밀번호가 일치합니다.</p>
+                    <p class="flase">비밀번호가 일치하지 않습니다.</p>
+                </div>
+                <div class="name-box box">
+                    <p>이름</p>
+                    <input type="text" id="name" class="name-in in" required>
+                </div>
+                <div class="birth-box box">
+                    <p>생년월일</p>
+                    <div class="birth">
+                        <div class="bir-yy">
+                            <input type="text" id="yy" placeholder="년(4자)" aria-label="년(4자)" class="int" 
+                            maxlength="4" >
+                        </div>
+                        <div class="bir-mm">
+                            <select  id="mm" class="sel" aria-label="월" required>
+                                <option value>월</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="bir-dd">
+                            <input type="text" id="dd" placeholder="일" aria-label="일" class="int" maxlength="2">
+        
+                        </div>
+
+                    </div>
+                    
+    
+                </div>
+                <div class="email-box box">
+                    <p>이메일</p>
+                    <input type="email" id="email" class="email-in in" required>
+                </div>
+                    <div class="button-box box">
+                    <input type="submit"  value="가입하기" id="submit" class="button in">
+                </div>
+            </form>
+        </div>
+    </div>
+
+      ​
+
+
+    <script src="js/jquery-1.12.4 (2).js"></script>
+    <script src="js/sign.js"></script>
+</body>
+</html>
