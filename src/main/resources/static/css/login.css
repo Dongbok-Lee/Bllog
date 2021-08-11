@@ -1,0 +1,121 @@
+*{
+  margin: 0;
+}
+body{
+  height: 100vh;
+  background-image: url("../img/loginbg.jpg") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contain{
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+a{
+  text-decoration: none;
+  color: black;
+  
+}
+.contain > a{
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 15px;
+  text-shadow: 4px 2px 2px gray;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+.contain > a:hover{
+  color: #fff;
+}
+.login{
+  margin-top: 50px;
+  width: 400px;
+  padding: 20px;
+  
+}
+.login > span{
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+input[type=email],
+input[type=password]{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+input[type=email]::placeholder,
+input[type=password]::placeholder{
+  opacity: 1;
+  transition: 0.3s;
+}
+input[type=email]:focus::placeholder,
+input[type=password]:focus::placeholder{
+  opacity: 0;
+  visibility: hidden;
+}
+.login >p{
+  overflow: hidden;
+  font-size: 10px;
+  margin-bottom: 20px;
+
+}
+.login > p label{
+  float: left;
+  cursor: pointer;
+
+}
+.login > p >a{
+  float: right;
+}
+.login > p> a:hover{
+  text-decoration: underline;
+}
+
+.button{
+  background-color: black;
+  border: 2px solid black;
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.button:hover{
+  background-color: rgb(87, 84, 84);
+  border: solid 2px rgb(87, 84, 84);
+}
+@media (max-width:767px){
+
+  .contain{
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+  .contain > a{
+    font-size: 40px;
+    padding: 10px;
+  }
+
+  .login{
+    width: 300px;
+    padding: 10px;  
+  }
+  .login > span{
+    display: block;
+    font-weight: bold;
+    font-size: 15px;
+  }
+ 
+
+}
