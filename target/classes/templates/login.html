@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="/css/login.css">
   
 </head>
 <body>
@@ -13,21 +13,20 @@
     <a href="/">BLLOG</a>
     
 
-    <form class="login">
+    <form action = "/auth/loginProc" method = "post" class="login">
       <span>아이디</span>
-      <input type="email" placeholder="ID/Email">
+      <input type="text" name = "username" id="username"placeholder="ID/Email">
       <span>비밀번호</span>
-      <input type="password" placeholder="Password">
+      <input type="password" name = "password" id="password" placeholder="Password">
       <p>
         <label >
-          <input type="checkbox"> 로그인 상태 유지 
+          <input name = "remember" type="checkbox"> 로그인 상태 유지 
         </label>
         <a href="#none" >아이디/비밀번호 찾기</a>
       </p>
-      <button class="button">Log in</button>
+      <button id= "submit">Log in</button>
     </form>
 
   </div>
-  
 </body>
 </html>
