@@ -1,4 +1,4 @@
-package com.bok.bllog.controller;
+ package com.bok.bllog.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,11 +11,11 @@ public class PageController {
 		return "main";
 	}
 	
-	@GetMapping("/sign")
+	@GetMapping("/auth/sign")
 	public String signup() {
 		return "sign";
 	}
-	@GetMapping("/login")
+	@GetMapping("/auth/login")
 	public String	login() {
 		return "login";
 	}

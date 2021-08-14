@@ -17,7 +17,7 @@ public class DummyController {
 		@PostMapping("/dummy/join")
 		public String join(User user) {
 			System.out.println("id: "+user.getId());
-			System.out.println("username : " + user.getUsername());
+			System.out.println("username : " + user.getId());
 			System.out.println("password : " + user.getPassword());
 			System.out.println("email : " + user.getEmail());
 			System.out.println("role : " + user.getRole());
@@ -28,3 +28,4 @@ public class DummyController {
 			return "회원가입이 완료되었습니다.";
 		}
 }
+ 

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang = "en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
   <script src="https://kit.fontawesome.com/9eed909b3f.js" crossorigin="anonymous"></script>
   
   
@@ -15,11 +15,15 @@
   <div class="container">
     <!-- 헤더 -->
     <div class="header">
-      <div class="log">
+      <div class="log" sec:authorize ="!isAuthenticated()">
         <a class="icon" href="/">Bllog</a>
-        <a class="log-in" href="/login">로그인</a>
-        <a class="sign" href="/sign">회원가입</a>
-
+        <a class="log-in" href="/auth/login">로그인</a>
+        <a class="sign" href="/auth/sign">회원가입</a>
+      </div>
+       <div class="log" sec:authorize="isAuthenticated()">
+        <a class="icon" href="/">Bllog</a>
+        <a class="log-in" href="/logout">로그아웃</a>
+        <a class="sign" href="/user/info">회원정보</a>
       </div>
     </div>
     <!-- 나머지 -->
