@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@1,600&family=Old+Standard+TT:wght@700&family=Petit+Formal+Script&family=Sansita:ital,wght@1,900&family=Zilla+Slab:ital,wght@1,700&display=swap');
 body{
   margin: 0;
   background-color: #f0f0f0 ;
@@ -11,6 +12,7 @@ ul{
 }
 .container{
   height: 100vh;
+  width: 100vw;
 }
 /* 헤더 */
 .header{
@@ -30,6 +32,7 @@ ul{
   height: 100px;
   box-sizing: border-box;
   transition: 1s;
+ 
 }
 .log > a:hover{
   color: white;
@@ -38,6 +41,7 @@ ul{
   display: grid;
   align-items: center;
   grid-area: icon;
+  font-family: 'Old Standard TT', serif;
   font-size: 50px;
   font-weight: bold;
   text-align: center;}
@@ -48,7 +52,7 @@ ul{
   font-size: 20px;
   align-items: center;}
 .sign{
-  display: grid;
+  display: grid; 
   align-items: center;
   grid-area: sign;
   font-size: 20px;
@@ -62,15 +66,10 @@ ul{
 
 .intext{
   display: grid;
-  grid-template-areas: '.. .. ..' 'videos videos videos' '.. main ..' 'footer footer footer';
+  grid-template-areas: '.. .. ..' 'videos videos videos' 'main main main ' 'footer footer footer';
   grid-template-columns: 200px 1fr 200px;
-  grid-template-rows: 100px 700px minmax(min-content,1fr) 100px;
+  grid-template-rows: 100px 500px minmax(min-content,1fr) 200px;
   height: 100%;
-}
-.intext > div{
-  border: 1px black solid;
-  
-
 }
 /* 비디오 */
 .videos{
@@ -82,7 +81,7 @@ ul{
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0,0.2);
+  background-color: rgba(0, 0, 0,0.4);
   
 }
 .videos > video{
@@ -95,9 +94,10 @@ ul{
 }
 .video-text{
   position: absolute;
-  font-size: 80px;
-  top: 30%;
-  left: 15%;
+  font-family: 'Old Standard TT', serif;
+  font-size: 70px;
+  top: 10%;
+  left: 10%;
   font-weight: bold;
   animation: textmove 6s linear;
 }
@@ -122,31 +122,67 @@ ul{
 .main{
   grid-area: main;
   display: grid;
-  grid-gap: 50px;
-  grid-template-areas: '..''item1''item2''..';
-  grid-template-rows: 50px 1fr 1fr 50px ;
+  grid-template-areas: 'item-text' 'item1''item2''..';
+  grid-template-rows:  150px 1fr 1fr 50px ;
   
 }
 
-.main > div{
-  border: 1px solid black;
+
+
+.item-text{
+  grid-area: item-text;
+  font-family: 'Sansita', sans-serif;
 }
+.item-text>p:nth-child(1){
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.item-text>p:nth-child(1):before{
+  position: absolute;
+  content: '';
+  background-color: black;
+  height: 2px;
+  bottom: -10px;
+  left: 50%;
+  animation: itembefore linear alternate infinite 1s;
+  transform: translate(-50%);
+}
+@keyframes itembefore{
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 80px;
+  }
+
+}
+
+.item-text > p:nth-child(2){
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  font-style: italic;
+}
+
+
 /* item1 */
 .item1{
   grid-area: item1;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: minmax(800px,1fr);
+  grid-template-rows: minmax(600px,1fr);
 }
 .inner{
   width: 100%;
-  border: 1px solid gold;
   height: 100%;
 }
+
 .tab{
-  border: 1px solid red;
+  
   width: 100%;
-  height: 85%;
+  height: 100%;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
@@ -161,12 +197,15 @@ ul{
 
 }
 .item>div{
-  border: 1px solid blue;
+ 
   width: 33.33333%;
   height: 100%;
   float: left;
   box-sizing: border-box;
 }
+
+
+
 /* main화살표 */
 .arrow{
   position: absolute;
@@ -174,17 +213,17 @@ ul{
   box-sizing: border-box;
   top: 50%;
   transform: translate(0,-50%);
-  font-size: 60px;
+  font-size: 50px;
   color: rgba(0, 0, 0, 0.5);
 }
 .arrow > i:nth-child(1){
   position: absolute;
-  left: 0;
+  left: 2%;
   
 }
 .arrow > i:nth-child(2){
   position: absolute;
-  right: 0;
+  right: 2%;
   
 }
 .arrow > i.disabled{
@@ -196,20 +235,65 @@ ul{
   bottom: 0%;
   left: 50%;
   text-align: center;
-  transform: translate(-50%);
+  transform: translate(-50%,0);
 }
 .btn > a{
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   background-color: lightgray;
   display: inline-block;
   cursor: pointer;
   border-radius: 50%;
 }
 .btn >a.active{
-  background-color: red;
+  background-color: rgb(0, 0, 0);
   border-radius: 50%;
 }
+/* 슬라이드 컨텐츠  */
+.slide{
+  position: relative;
+}
+.slide1{
+  background-image: url("/src/main/resources/static/img/slide1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.slide-filter{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0,0.5);
+  
+
+}
+.slide >p{
+  font-family: 'Old Standard TT', serif;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-30%);
+}
+.slide2{
+  background-image: url("/src/main/resources/static/img/slide2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+.slide3{
+  background-image: url("/src/main/resources/static/img/slide3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+
 
 
 
@@ -217,25 +301,124 @@ ul{
 /* item 2 */
 .item2{
   display: grid;
-  grid-gap: 50px;
   grid-area: item2;
+  grid-template-areas: '.. item2-text ..''.. cards ..';
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: 70px 1fr;
+}
+.item2-text{
+  grid-area: item2-text;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Petit Formal Script', cursive;
+}
+
+.cards{
+  display: grid;
+  position: relative;
   grid-template-columns: repeat(4,1fr);
   grid-template-rows: repeat(2,1fr);
-                       
-}
-.item2 > div{
-  border: 1px black solid;
-}
-.card1{
-  grid-column: 2/4;
-  grid-row: 1/3;
+  grid-area: cards;
+  grid-gap: 20px;
   
 }
 
 
+.card{
+  cursor: pointer;
+}
+.card > p{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Arimo', sans-serif;
+
+}
+.cardcontent{
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 80%;;
+  border-radius: 20px;
+  
+}
+.cardimg-filter{
+  position: absolute;
+  background: rgba(0, 0, 0,0.3);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+  
+}
+.cardhover{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  opacity: 0;
+  transition: 2s;
+}
+.cardhover>a{
+  position: absolute;
+  font-family: 'Arimo', sans-serif;
+  font-size: 20px;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-bottom: #fff 1px solid;
+}
+.card1:hover .cardhover,
+.card2:hover .cardhover,
+.card3:hover .cardhover,
+.card4:hover .cardhover,
+.card5:hover .cardhover,
+.card6:hover .cardhover,
+.card7:hover .cardhover,
+.card8:hover .cardhover{
+  opacity: 1;
+}
 
 
-/*  */
+.cardimg1{
+  background-image: url("/src/main/resources/static/img/categories1.jpg");
+  
+}
+.cardimg2{
+  background-image: url("/src/main/resources/static/img/categories2.jpg");
+}
+.cardimg3{
+  background-image: url("/src/main/resources/static/img/categories3.jpg");
+}
+.cardimg4{
+  background-image: url("/src/main/resources/static/img/categories4.jpg");
+}
+.cardimg5{
+  background-image: url("/src/main/resources/static/img/categories5.jpg");
+}
+.cardimg6{
+  background-image: url("/src/main/resources/static/img/categories6.jpg");
+}
+.cardimg7{
+  background-image: url("/src/main/resources/static/img/categories7.jpg");
+
+}
+.cardimg8{
+  background-image: url("/src/main/resources/static/img/categories8.jpg");
+}
+
+
+
+
+
+/*footer  */
 .footer{
   display: grid;
   grid-area: footer;
@@ -248,10 +431,12 @@ ul{
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 5px;
+  text-align: center;
  
 }
 
 .footer-icon>i{
+  text-align: center;
   font-size: 18px;
   
 }
@@ -267,6 +452,7 @@ ul{
 }
 /* 모바일 */
 @media (max-width:767px) {
+  
   
   .log{
     display: grid;
@@ -286,7 +472,7 @@ ul{
   .intext{
     grid-template-areas: '..' 'videos' 'main' 'footer';
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 500px minmax(min-content,1fr) 100px;
+    grid-template-rows: 100px 300px minmax(min-content,1fr) 100px;
   }
 
   /* 비디오 */
@@ -302,7 +488,7 @@ ul{
  
   .video-text{
     position: absolute;
-    font-size: 35px;
+    font-size: 30px;
     text-align: center;
     top: 50%;
     left: 50%;
@@ -310,26 +496,126 @@ ul{
   }
 
   /* 메인 */
-  .item2{
-    display: grid;
-    grid-gap: 30px;
-    grid-area: item2;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-                         
-  }
-  .item2 > div{
-    border: 1px black solid;
-  }
-  .card1{
-    grid-column: auto;
-    grid-row: auto;
+  .main{
+    grid-template-rows:  100px 1fr 1fr 50px ;
     
   }
+  
+  .item-text>p:nth-child(1){
+    font-size: 20px;
+  }
+  
+  .item-text > p:nth-child(2){
+    font-size: 13px;
+  }
+  
+  
+  /* item1 */
+  .item1{
+    grid-template-rows: minmax(100px,1fr);
+  }
+ 
+ 
+  
+  
+  /* main화살표 */
+  .arrow{
+    font-size: 40px;
+  }
 
+  /* main  버튼 */
 
+  .btn > a{
+    width: 10px;
+    height: 10px;
+  }
+
+  /* 슬라이드 컨텐츠  */
+  .slide{
+    position: relative;
+  }
+
+  .slide >p{
+    top: 40%;
+    font-size: 15px;
+  }
+  
+  /* item 2 */
+  .item2{
+    display: grid;
+    grid-area: item2;
+    grid-template-areas: '.. item2-text .. ''.. cards .. ';
+    grid-template-columns: 10px 1fr 10px ;
+    grid-template-rows: 70px 1fr;
+  }
+  .item2-text{
+    font-size: 20px;
+  }
+  
+  .cards{
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-area: cards;
+    grid-gap: 20px;
+    
+  }
+ 
+  
+  
+  .card{
+    cursor: pointer;
+  }
+  .card > p{
+    font-size: 10px;  
+  }
+  
+  .cardhover>a{
+    font-size: 10px;
+  }
+  
+  
+
+  
+  
+  
+  /*footer  */
+  .footer{
+    display: grid;
+    grid-area: footer;
+    background-color: #434a54 ;
+    align-content: center;
+    justify-content: center;
+  
+  }
+  .footer-icon > p{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+   
+  }
+  
+  .footer-icon>i{
+    font-size: 18px;
+    
+  }
+  .footer-icon>a:hover{
+    color: blue;
+  }
+  
+  .footer-icon > a:nth-child(2){
+    margin-right: 15px;
+  }
+  .footer-icon > a:nth-child(3){
+    margin-right: 15px;
+  }
+}    
   
 
 
   
-}
+
+
+  
+
