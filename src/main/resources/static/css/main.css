@@ -254,7 +254,7 @@ ul{
   position: relative;
 }
 .slide1{
-  background-image: url("/src/main/resources/static/img/slide1.jpg");
+  background-image: url("../img/slide1.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -280,14 +280,14 @@ ul{
   transform: translate(-50%,-30%);
 }
 .slide2{
-  background-image: url("/src/main/resources/static/img/slide2.jpg");
+  background-image: url("../img/slide2.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
 }
 .slide3{
-  background-image: url("/src/main/resources/static/img/slide3.jpg");
+  background-image: url("../img/slide3.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -388,30 +388,30 @@ ul{
 
 
 .cardimg1{
-  background-image: url("/src/main/resources/static/img/categories1.jpg");
+  background-image: url("../img/categories1.jpg");
   
 }
 .cardimg2{
-  background-image: url("/src/main/resources/static/img/categories2.jpg");
+  background-image: url("../img/categories2.jpg");
 }
 .cardimg3{
-  background-image: url("/src/main/resources/static/img/categories3.jpg");
+  background-image: url("../img/categories3.jpg");
 }
 .cardimg4{
-  background-image: url("/src/main/resources/static/img/categories4.jpg");
+  background-image: url("../img/categories4.jpg");
 }
 .cardimg5{
-  background-image: url("/src/main/resources/static/img/categories5.jpg");
+  background-image: url("../img/categories5.jpg");
 }
 .cardimg6{
-  background-image: url("/src/main/resources/static/img/categories6.jpg");
+  background-image: url("../img/categories6.jpg");
 }
 .cardimg7{
-  background-image: url("/src/main/resources/static/img/categories7.jpg");
+  background-image: url("../img/categories7.jpg");
 
 }
 .cardimg8{
-  background-image: url("/src/main/resources/static/img/categories8.jpg");
+  background-image: url("../img/categories8.jpg");
 }
 
 
